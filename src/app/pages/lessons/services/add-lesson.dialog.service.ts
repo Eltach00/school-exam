@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Observable } from 'rxjs';
 
+import { LessonDTO } from '../../../api';
 import { DIALOG_CONFIGS } from '../../../shared';
 import { AddLessonDialogComponent } from '../dialogs';
 
@@ -11,11 +12,10 @@ import { AddLessonDialogComponent } from '../dialogs';
 export class AddLessonDialogService {
   constructor(private readonly matDialog: MatDialog) {}
 
-  open(): Observable<boolean | undefined> {
+  open(): Observable<LessonDTO> {
     return this.matDialog
       .open<AddLessonDialogComponent>(AddLessonDialogComponent, {
         ...DIALOG_CONFIGS,
-
         panelClass: ['custom-mat-dialog'],
       })
       .afterClosed()

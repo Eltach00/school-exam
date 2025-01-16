@@ -1,14 +1,12 @@
 <app-dialog-header
+  title="Yeni Dərs Əlavə Et"
   class="mb-20"
   buttonText="Bağla"
   (closeEmitter)="onCloseClicked()"
 ></app-dialog-header>
 
-<!-- add-lesson-dialog.component.html -->
-<h2 mat-dialog-title>Yeni Dərs Əlavə Et</h2>
-
-<form [formGroup]="addLessonForm" (ngSubmit)="onSubmit()">
-  <mat-form-field>
+<form [formGroup]="addLessonForm" class="row">
+  <mat-form-field class="col-4">
     <mat-label>Dərsin Kodu</mat-label>
     <input matInput formControlName="code" required />
     <mat-error *ngIf="addLessonForm.get('code').hasError('required')"
@@ -16,7 +14,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="col-4">
     <mat-label>Dərsin Adı</mat-label>
     <input matInput formControlName="name" required />
     <mat-error *ngIf="addLessonForm.get('name').hasError('required')"
@@ -24,15 +22,18 @@
     >
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="col-4">
     <mat-label>Sinif</mat-label>
     <input matInput formControlName="class" required />
     <mat-error *ngIf="addLessonForm.get('class').hasError('required')"
       >Sinif tələb olunur</mat-error
     >
+    <mat-error *ngIf="addLessonForm.get('class').hasError('pattern')"
+      >Sinif yalnız rəqəmlərdən ibarət olmalıdır</mat-error
+    >
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="col-4">
     <mat-label>Müəllimin Adı</mat-label>
     <input matInput formControlName="teacherFirstName" required />
     <mat-error
@@ -41,20 +42,24 @@
     >
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="col-4">
     <mat-label>Müəllimin Soyadı</mat-label>
     <input matInput formControlName="teacherLastName" required />
     <mat-error *ngIf="addLessonForm.get('teacherLastName').hasError('required')"
       >Müəllimin soyadı tələb olunur</mat-error
     >
   </mat-form-field>
-
-  <div mat-dialog-actions>
-    <button mat-stroked-button (click)="onCloseClicked()" class="mr-8">
-      İmtina Et
-    </button>
-    <button mat-stroked-button type="submit" [disabled]="addLessonForm.invalid">
-      Əlavə Et
-    </button>
-  </div>
 </form>
+
+<div>
+  <button mat-stroked-button (click)="onCloseClicked()" class="mr-8">
+    İmtina Et
+  </button>
+  <button
+    mat-stroked-button
+    (click)="onSubmit()"
+    [disabled]="addLessonForm.invalid"
+  >
+    Əlavə Et
+  </button>
+</div>
