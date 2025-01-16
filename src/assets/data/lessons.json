@@ -1,0 +1,72 @@
+[
+  {
+    "code": "MAT",
+    "name": "Riyaziyyat",
+    "class": 10,
+    "teacherFirstName": "Ramil",
+    "teacherLastName": "Əliyev"
+  },
+  {
+    "code": "SCI",
+    "name": "Fizika",
+    "class": 9,
+    "teacherFirstName": "Təmkin",
+    "teacherLastName": "Hüseynov"
+  },
+  {
+    "code": "ENG",
+    "name": "İngilis dili",
+    "class": 10,
+    "teacherFirstName": "Aysel",
+    "teacherLastName": "Quliyeva"
+  },
+  {
+    "code": "BIO",
+    "name": "Biologiya",
+    "class": 11,
+    "teacherFirstName": "Kamran",
+    "teacherLastName": "Həsənov"
+  },
+  {
+    "code": "HIS",
+    "name": "Tarix",
+    "class": 9,
+    "teacherFirstName": "Elvira",
+    "teacherLastName": "Məmmədova"
+  },
+  {
+    "code": "CHE",
+    "name": "Kimya",
+    "class": 12,
+    "teacherFirstName": "Vüsal",
+    "teacherLastName": "Rəhimov"
+  },
+  {
+    "code": "ART",
+    "name": "Rəssamlıq",
+    "class": 10,
+    "teacherFirstName": "Günay",
+    "teacherLastName": "Nəbiyeva"
+  },
+  {
+    "code": "MUS",
+    "name": "Musiqi",
+    "class": 11,
+    "teacherFirstName": "Xanlar",
+    "teacherLastName": "Əliyev"
+  },
+  {
+    "code": "LIT",
+    "name": "Ədəbiyyat",
+    "class": 12,
+    "teacherFirstName": "Nigar",
+    "teacherLastName": "Rzayev"
+  },
+  {
+    "code": "INF",
+    "name": "İnformatika",
+    "class": 10,
+    "teacherFirstName": "Vahid",
+    "teacherLastName": "Bəşirov"
+  }
+]
