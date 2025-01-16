@@ -24,6 +24,14 @@ export class LessonsListComponent implements OnInit {
     'teacherLastName',
   ];
 
+  columnNames: string[] = [
+    'Dərsin Kodu',
+    'Dərsin Adı',
+    'Sinif',
+    'Müəllimin Adı',
+    'Müəllimin Soyadı',
+  ];
+
   constructor(
     private readonly lessonsService: LessonsService,
     private readonly loaderService: LoaderService,

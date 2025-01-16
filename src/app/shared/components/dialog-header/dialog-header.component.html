@@ -1,0 +1,9 @@
+<span class="fs-14 lh-24 fw-600">{{ title }}</span>
+
+<a
+  *ngIf="isShowCloseButton"
+  class="link-icon link-icon_close"
+  (click)="onCloseClicked()"
+>
+  <span class="close-button_text">{{ buttonText }}</span>
+</a>

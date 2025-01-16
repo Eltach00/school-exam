@@ -1,0 +1,19 @@
+// images&icons
+.link-icon
+  display: flex
+  align-items: center
+  &:hover
+    cursor: pointer
+
+.link-icon::before
+  display: inline-block
+  content: ''
+  width: 24px
+  height: 24px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  flex-shrink: 0
+
+.link-icon_close::before
+  background: url('../assets/icons/close.svg')
