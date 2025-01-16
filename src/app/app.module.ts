@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoaderService } from './core';
+import { LoaderComponent, LoaderService } from './core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +20,7 @@ import { LoaderService } from './core';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    LoaderComponent,
   ],
   providers: [LoaderService],
   bootstrap: [AppComponent],

@@ -4,4 +4,8 @@
   </button>
 </div>
 
-<app-lessons-list [newLesson]="newLesson"></app-lessons-list>
+<app-lessons-list
+  *ngIf="lessons"
+  [newLesson]="newLesson"
+  [lessons]="lessons"
+></app-lessons-list>

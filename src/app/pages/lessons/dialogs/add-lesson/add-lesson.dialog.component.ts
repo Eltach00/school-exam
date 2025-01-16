@@ -10,8 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
-import { DialogHeaderComponent } from '../../../../shared';
+import { DialogHeaderComponent } from '@app-shared';
 
 @Component({
   standalone: true,
@@ -43,7 +42,6 @@ export class AddLessonDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  // Метод для отправки формы
   onSubmit(): void {
     if (this.addLessonForm.valid) {
       this.dialogRef.close(this.addLessonForm.value);

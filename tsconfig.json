@@ -9,6 +9,11 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
+    "paths": {
+      "@app-core": ["src/app/core"],
+      "@app-shared": ["src/app/shared"],
+      "@app-api": ["src/app/api"]
+    },
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2021",

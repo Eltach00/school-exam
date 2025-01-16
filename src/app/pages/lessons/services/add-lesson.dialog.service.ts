@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { LessonDTO } from '@app-api';
+import { DIALOG_CONFIGS } from '@app-shared';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Observable } from 'rxjs';
 
-import { LessonDTO } from '../../../api';
-import { DIALOG_CONFIGS } from '../../../shared';
 import { AddLessonDialogComponent } from '../dialogs';
 
 @UntilDestroy()
