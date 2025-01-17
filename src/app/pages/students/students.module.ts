@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-import { StudentsAPIService } from '@app-api';
 
 import { StudentListComponent } from './components';
 import { StudentPageContainerComponent } from './containers';
@@ -22,7 +22,8 @@ import { StudentsRoutingModule } from './students-routing.module';
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatIconModule,
   ],
-  providers: [StudentsAPIService, AddStudentDialogService],
+  providers: [AddStudentDialogService],
 })
 export class StudentsModule {}

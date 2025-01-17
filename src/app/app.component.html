@@ -4,30 +4,30 @@
 </mat-toolbar>
 
 <div class="header-container">
-  <button
-    mat-raised-button
-    color="accent"
+  <a
+    mat-stroked-button
     routerLink="/lessons"
     class="nav-button"
+    routerLinkActive="active-link"
   >
     <mat-icon>school</mat-icon> Dərslər
-  </button>
-  <button
-    mat-raised-button
-    color="accent"
-    routerLink="/exams"
-    class="nav-button"
-  >
-    <mat-icon>grade</mat-icon> İmtahanlar
-  </button>
-  <button
-    mat-raised-button
-    color="accent"
+  </a>
+  <a
+    mat-stroked-button
     routerLink="/students"
     class="nav-button"
+    routerLinkActive="active-link"
   >
     <mat-icon>group</mat-icon> Şagirdlər
-  </button>
+  </a>
+  <a
+    mat-stroked-button
+    routerLink="/exams"
+    class="nav-button"
+    routerLinkActive="active-link"
+  >
+    <mat-icon>grade</mat-icon> İmtahanlar
+  </a>
 </div>
 <div class="main-container">
   <router-outlet></router-outlet>

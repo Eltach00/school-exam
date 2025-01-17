@@ -11,23 +11,33 @@ import { MatTableDataSource } from '@angular/material/table';
 import { LessonDTO } from '@app-api';
 
 @Component({
-  selector: 'app-students-list',
-  templateUrl: './students-list.component.html',
+  selector: 'app-exams-list',
+  templateUrl: './exams-list.component.html',
 })
-export class StudentListComponent implements OnChanges, AfterViewInit {
-  @Input() students: LessonDTO[];
-  @Input() newStudent: LessonDTO;
+export class ExamListComponent implements OnChanges, AfterViewInit {
+  @Input() exams: LessonDTO[];
+  @Input() newExam: LessonDTO;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: MatTableDataSource<LessonDTO> = new MatTableDataSource();
-  displayedColumns: string[] = ['number', 'name', 'lastName', 'class'];
+  displayedColumns: string[] = [
+    'courseCode',
+    'studentNumber',
+    'examDate',
+    'grade',
+  ];
 
-  columnNames: string[] = ['Nömrə', 'Ad', 'Soyad', 'Sinif'];
+  columnNames: string[] = [
+    'Dərsin kodu',
+    'Şagirdin nömrəsi',
+    'İmtahan tarixi',
+    'Qiymət',
+  ];
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['students'] && changes['students'].firstChange) {
-      this.dataSource.data = this.students;
+    if (changes['exams'] && changes['exams'].firstChange) {
+      this.dataSource.data = this.exams;
     }
-    if (changes['newStudent'] && !changes['newStudent'].firstChange) {
+    if (changes['newExam'] && !changes['newExam'].firstChange) {
       this.setData();
     }
   }
@@ -37,7 +47,7 @@ export class StudentListComponent implements OnChanges, AfterViewInit {
   }
 
   private setData(): void {
-    const lessonData: LessonDTO[] = [this.newStudent, ...this.dataSource.data];
+    const lessonData: LessonDTO[] = [this.newExam, ...this.dataSource.data];
     this.dataSource.data = lessonData;
     this.dataSource.paginator = this.paginator;
   }

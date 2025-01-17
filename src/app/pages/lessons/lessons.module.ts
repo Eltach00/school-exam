@@ -2,10 +2,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-
-import { LessonsAPIService } from '../../api';
 
 import { LessonsListComponent } from './components';
 import { LessonPageContainerComponent } from './containers';
@@ -23,7 +22,8 @@ import { AddLessonDialogService } from './services';
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatIconModule,
   ],
-  providers: [LessonsAPIService, AddLessonDialogService],
+  providers: [AddLessonDialogService],
 })
 export class LessonsModule {}

@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,7 +23,7 @@ import { LoaderComponent, LoaderService } from './core';
     MatIconModule,
     LoaderComponent,
   ],
-  providers: [LoaderService],
+  providers: [LoaderService, { provide: MAT_DATE_LOCALE, useValue: 'ru-RU' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

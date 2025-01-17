@@ -1,19 +1,19 @@
 <app-dialog-header
-  title="Yeni Şagird Əlavə Et"
+  title="Yeni Şagird  "
   class="mb-20"
   buttonText="Bağla"
   (closeEmitter)="onCloseClicked()"
 ></app-dialog-header>
 
-<form [formGroup]="addStudentForm" class="row">
-  <mat-form-field class="col-4">
+<form [formGroup]="addStudentForm" class="row mt-20">
+  <mat-form-field class="col-4 mb-10">
     <mat-label>Şagirdin Adı</mat-label>
     <input matInput formControlName="name" required />
     <mat-error *ngIf="addStudentForm.get('name').hasError('required')"
       >Şagirdin adı tələb olunur</mat-error
     >
   </mat-form-field>
-  <mat-form-field class="col-4">
+  <mat-form-field class="col-4 mb-10">
     <mat-label>Şagirdin Soyadı</mat-label>
     <input matInput formControlName="lastName" required />
     <mat-error *ngIf="addStudentForm.get('lastName').hasError('required')"
@@ -21,7 +21,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4">
+  <mat-form-field class="col-4 mb-10">
     <mat-label>Sinif</mat-label>
     <input matInput formControlName="class" required />
     <mat-error *ngIf="addStudentForm.get('class').hasError('required')"
@@ -32,7 +32,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4">
+  <mat-form-field class="col-4 mb-10">
     <mat-label>Nömrə</mat-label>
     <input matInput formControlName="number" required />
     <mat-error *ngIf="addStudentForm.get('number').hasError('required')"
@@ -44,7 +44,7 @@
   </mat-form-field>
 </form>
 
-<div class="mt-30">
+<div class="mt-20">
   <button
     mat-raised-button
     class="mr-8"

@@ -1,12 +1,12 @@
 <app-dialog-header
-  title="Yeni Dərs Əlavə Et"
+  title="Yeni Dərs  "
   class="mb-20"
   buttonText="Bağla"
   (closeEmitter)="onCloseClicked()"
 ></app-dialog-header>
 
-<form [formGroup]="addLessonForm" class="row">
-  <mat-form-field class="col-4">
+<form [formGroup]="addLessonForm" class="row mt-20">
+  <mat-form-field class="col-4 mb-10">
     <mat-label>Dərsin Kodu</mat-label>
     <input matInput formControlName="code" required />
     <mat-error *ngIf="addLessonForm.get('code').hasError('required')"
@@ -14,7 +14,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4">
+  <mat-form-field class="col-4 mb-10">
     <mat-label>Dərsin Adı</mat-label>
     <input matInput formControlName="name" required />
     <mat-error *ngIf="addLessonForm.get('name').hasError('required')"
@@ -22,7 +22,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4">
+  <mat-form-field class="col-4 mb-10">
     <mat-label>Sinif</mat-label>
     <input matInput formControlName="class" required />
     <mat-error *ngIf="addLessonForm.get('class').hasError('required')"
@@ -33,7 +33,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4">
+  <mat-form-field class="col-4 mb-10">
     <mat-label>Müəllimin Adı</mat-label>
     <input matInput formControlName="teacherFirstName" required />
     <mat-error
@@ -42,7 +42,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4">
+  <mat-form-field class="col-4 mb-10">
     <mat-label>Müəllimin Soyadı</mat-label>
     <input matInput formControlName="teacherLastName" required />
     <mat-error *ngIf="addLessonForm.get('teacherLastName').hasError('required')"
@@ -51,15 +51,17 @@
   </mat-form-field>
 </form>
 
-<div>
-  <button mat-stroked-button (click)="onCloseClicked()" class="mr-8">
-    İmtina Et
-  </button>
+<div class="mt-20">
   <button
-    mat-stroked-button
+    mat-raised-button
+    color="primary"
+    class="mr-8"
     (click)="onSubmit()"
     [disabled]="addLessonForm.invalid"
   >
-    Əlavə Et
+    Əlavə et
+  </button>
+  <button mat-raised-button color="warn" (click)="onCloseClicked()">
+    İmtina et
   </button>
 </div>

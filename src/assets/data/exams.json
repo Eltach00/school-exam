@@ -1,0 +1,62 @@
+[
+  {
+    "courseCode": "BIO",
+    "studentNumber": 10004,
+    "examDate": "18.01.2025",
+    "grade": 5
+  },
+  {
+    "courseCode": "TAR",
+    "studentNumber": 10005,
+    "examDate": "19.01.2025",
+    "grade": 4
+  },
+  {
+    "courseCode": "COG",
+    "studentNumber": 10006,
+    "examDate": "20.01.2025",
+    "grade": 5
+  },
+  {
+    "courseCode": "ING",
+    "studentNumber": 10007,
+    "examDate": "21.01.2025",
+    "grade": 3
+  },
+  {
+    "courseCode": "AZE",
+    "studentNumber": 10008,
+    "examDate": "22.01.2025",
+    "grade": 4
+  },
+  {
+    "courseCode": "FEN",
+    "studentNumber": 10009,
+    "examDate": "23.01.2025",
+    "grade": 5
+  },
+  {
+    "courseCode": "EDB",
+    "studentNumber": 10010,
+    "examDate": "24.01.2025",
+    "grade": 4
+  },
+  {
+    "courseCode": "EDB",
+    "studentNumber": 10010,
+    "examDate": "24.01.2025",
+    "grade": 4
+  },
+  {
+    "courseCode": "EDB",
+    "studentNumber": 10010,
+    "examDate": "24.01.2025",
+    "grade": 4
+  },
+  {
+    "courseCode": "EDB",
+    "studentNumber": 10010,
+    "examDate": "24.01.2025",
+    "grade": 4
+  }
+]

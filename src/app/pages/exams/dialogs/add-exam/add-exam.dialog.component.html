@@ -1,0 +1,74 @@
+<app-dialog-header
+  title="Yeni İmtahan"
+  class="mb-20"
+  buttonText="Bağla"
+  (closeEmitter)="onCloseClicked()"
+></app-dialog-header>
+
+<form [formGroup]="addExamForm" class="row mt-20">
+  <mat-form-field class="col-4 mb-20">
+    <mat-label>Dərsin kodu</mat-label>
+    <input matInput formControlName="courseCode" required />
+    <mat-error *ngIf="addExamForm.get('courseCode').hasError('required')"
+      >Dərsin kodu tələb olunur</mat-error
+    >
+    <mat-error *ngIf="addExamForm.get('courseCode').hasError('pattern')"
+      >Dərsin kodu yalnız 3 böyük latın hərfindən ibarət olmalıdır.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="col-4 mb-20">
+    <mat-label>Şagirdin nömrəsi</mat-label>
+    <input matInput formControlName="studentNumber" required />
+    <mat-error *ngIf="addExamForm.get('studentNumber').hasError('required')"
+      >Şagirdin nömrəsi tələb olunur</mat-error
+    >
+    <mat-error *ngIf="addExamForm.get('studentNumber').hasError('pattern')"
+      >Şagirdin nömrəsi yalnız 5 rəqəmdən ibarət olmalıdır
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="col-4 mb-20" appearance="fill">
+    <mat-label>İmtahan tarixi</mat-label>
+    <input
+      matInput
+      [matDatepicker]="examDatePicker"
+      formControlName="examDate"
+      (click)="examDatePicker.open()"
+      placeholder="Tarixi seçin"
+    />
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="examDatePicker"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #examDatePicker></mat-datepicker>
+    <mat-error *ngIf="addExamForm.get('examDate').hasError('required')"
+      >İmtahan tarixi tələb olunur</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field class="col-4 mb-20">
+    <mat-label>Qiymət</mat-label>
+    <input matInput formControlName="grade" required />
+    <mat-error *ngIf="addExamForm.get('grade').hasError('required')"
+      >Qiymət tələb olunur</mat-error
+    >
+    <mat-error *ngIf="addExamForm.get('grade').hasError('pattern')"
+      >Qiymət yalnız 1 rəqəm ibarət olmalıdır.
+    </mat-error>
+  </mat-form-field>
+</form>
+
+<div class="mt-20">
+  <button
+    mat-raised-button
+    class="mr-8"
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="addExamForm.invalid"
+  >
+    Əlavə et
+  </button>
+  <button mat-raised-button color="warn" (click)="onCloseClicked()">
+    İmtina et
+  </button>
+</div>
