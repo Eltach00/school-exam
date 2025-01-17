@@ -14,7 +14,8 @@ import { DialogHeaderComponent } from '@app-shared';
 
 @Component({
   standalone: true,
-  templateUrl: './add-lesson.dialog.component.html',
+  selector: 'app-add-student.dialog',
+  templateUrl: './add-student.dialog.component.html',
   imports: [
     DialogHeaderComponent,
     ReactiveFormsModule,
@@ -24,11 +25,11 @@ import { DialogHeaderComponent } from '@app-shared';
     MatButtonModule,
   ],
 })
-export class AddLessonDialogComponent implements OnInit {
-  addLessonForm: FormGroup;
+export class AddStudentDialogComponent implements OnInit {
+  addStudentForm: FormGroup;
 
   constructor(
-    private readonly dialogRef: MatDialogRef<AddLessonDialogComponent>,
+    private readonly dialogRef: MatDialogRef<AddStudentDialogComponent>,
     private readonly fb: FormBuilder,
   ) {}
 
@@ -41,18 +42,17 @@ export class AddLessonDialogComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.addLessonForm.valid) {
-      this.dialogRef.close(this.addLessonForm.value);
+    if (this.addStudentForm.valid) {
+      this.dialogRef.close(this.addStudentForm.value);
     }
   }
 
   private initForm(): void {
-    this.addLessonForm = this.fb.group({
-      code: ['', Validators.required],
+    this.addStudentForm = this.fb.group({
       name: ['', Validators.required],
       class: ['', [Validators.required, Validators.pattern('^\\d{1,2}$')]],
-      teacherFirstName: ['', Validators.required],
-      teacherLastName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      number: ['', [Validators.required, Validators.pattern('^\\d{1,5}$')]],
     });
   }
 }

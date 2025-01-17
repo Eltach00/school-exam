@@ -5,7 +5,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 
-import { LessonsService } from '../../api';
+import { LessonsAPIService } from '../../api';
 
 import { LessonsListComponent } from './components';
 import { LessonPageContainerComponent } from './containers';
@@ -24,6 +24,6 @@ import { AddLessonDialogService } from './services';
     MatPaginatorModule,
     MatDialogModule,
   ],
-  providers: [LessonsService, AddLessonDialogService],
+  providers: [LessonsAPIService, AddLessonDialogService],
 })
 export class LessonsModule {}

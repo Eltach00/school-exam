@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LessonDTO, LessonsService } from '@app-api';
+import { LessonDTO, LessonsAPIService } from '@app-api';
 import { LoaderService } from '@app-core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { filter, finalize } from 'rxjs';
@@ -8,9 +8,7 @@ import { AddLessonDialogService } from '../../services';
 
 @UntilDestroy()
 @Component({
-  selector: 'app-lesson-page-container',
   templateUrl: './lesson-page-container.component.html',
-  styleUrls: ['./lesson-page-container.component.sass'],
 })
 export class LessonPageContainerComponent implements OnInit {
   newLesson: LessonDTO;
@@ -18,7 +16,7 @@ export class LessonPageContainerComponent implements OnInit {
 
   constructor(
     private readonly addLessonDialogService: AddLessonDialogService,
-    private readonly lessonsService: LessonsService,
+    private readonly lessonsService: LessonsAPIService,
     private readonly loaderService: LoaderService,
   ) {}
 

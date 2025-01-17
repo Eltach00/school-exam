@@ -13,7 +13,6 @@ import { LessonDTO } from '@app-api';
 @Component({
   selector: 'app-lessons-list',
   templateUrl: './lessons-list.component.html',
-  styleUrls: ['./lessons-list.component.sass'],
 })
 export class LessonsListComponent implements OnChanges, AfterViewInit {
   @Input() lessons: LessonDTO[];

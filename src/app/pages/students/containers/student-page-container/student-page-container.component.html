@@ -1,0 +1,11 @@
+<div class="flex-row-end-center mb-20">
+  <button mat-raised-button color="primary" (click)="onClick()">
+    Əlavə et
+  </button>
+</div>
+
+<app-students-list
+  *ngIf="students"
+  [newStudent]="newStudent"
+  [students]="students"
+></app-students-list>

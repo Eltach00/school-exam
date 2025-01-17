@@ -1,0 +1,62 @@
+[
+  {
+    "number": 10001,
+    "name": "Emin",
+    "lastName": "Hüseynov",
+    "class": 10
+  },
+  {
+    "number": 10002,
+    "name": "Aysel",
+    "lastName": "Quliyeva",
+    "class": 9
+  },
+  {
+    "number": 10003,
+    "name": "Murad",
+    "lastName": "Əliyev",
+    "class": 11
+  },
+  {
+    "number": 10004,
+    "name": "Nigar",
+    "lastName": "Məmmədova",
+    "class": 10
+  },
+  {
+    "number": 10005,
+    "name": "Tural",
+    "lastName": "İbrahimov",
+    "class": 9
+  },
+  {
+    "number": 10006,
+    "name": "Leyla",
+    "lastName": "Əliyeva",
+    "class": 8
+  },
+  {
+    "number": 10007,
+    "name": "Rəşad",
+    "lastName": "Həsənov",
+    "class": 11
+  },
+  {
+    "number": 10008,
+    "name": "Günel",
+    "lastName": "Abdullayeva",
+    "class": 9
+  },
+  {
+    "number": 10009,
+    "name": "Kamran",
+    "lastName": "Vəliyev",
+    "class": 10
+  },
+  {
+    "number": 10010,
+    "name": "Fidan",
+    "lastName": "Süleymanova",
+    "class": 8
+  }
+]
