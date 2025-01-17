@@ -5,16 +5,19 @@
   (closeEmitter)="onCloseClicked()"
 ></app-dialog-header>
 
-<form [formGroup]="addLessonForm" class="row mt-20">
-  <mat-form-field class="col-4 mb-30">
+<form [formGroup]="addLessonForm" class="form-container">
+  <mat-form-field class="form-element">
     <mat-label>Dərsin Kodu</mat-label>
     <input matInput formControlName="code" required />
     <mat-error *ngIf="addLessonForm.get('code').hasError('required')"
+      >Dərsin kodu tələb olunur</mat-error
+    >
+    <mat-error *ngIf="addLessonForm.get('code').hasError('pattern')"
       >Dərsin kodu yalnız 3 böyük latın hərfindən ibarət olmalıdır.</mat-error
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-30">
+  <mat-form-field class="form-element">
     <mat-label>Dərsin Adı</mat-label>
     <input matInput formControlName="name" required />
     <mat-error *ngIf="addLessonForm.get('name').hasError('required')"
@@ -30,7 +33,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-30">
+  <mat-form-field class="form-element">
     <mat-label>Sinif</mat-label>
     <input matInput formControlName="class" required />
     <mat-error *ngIf="addLessonForm.get('class').hasError('required')"
@@ -41,7 +44,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-30">
+  <mat-form-field class="form-element">
     <mat-label>Müəllimin Adı</mat-label>
     <input matInput formControlName="teacherFirstName" required />
     <mat-error
@@ -58,7 +61,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-30">
+  <mat-form-field class="form-element mt-30">
     <mat-label>Müəllimin Soyadı</mat-label>
     <input matInput formControlName="teacherLastName" required />
     <mat-error *ngIf="addLessonForm.get('teacherLastName').hasError('required')"
@@ -75,7 +78,7 @@
   </mat-form-field>
 </form>
 
-<div class="mt-10">
+<div class="mt-100">
   <button
     mat-raised-button
     color="primary"

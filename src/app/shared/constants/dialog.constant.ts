@@ -1,7 +1,6 @@
 import { MatDialogConfig } from '@angular/material/dialog';
 
 export const DIALOG_CONFIGS: MatDialogConfig = {
-  height: '500px',
-  width: '900px',
+  width: '1000px',
   disableClose: true,
 };
