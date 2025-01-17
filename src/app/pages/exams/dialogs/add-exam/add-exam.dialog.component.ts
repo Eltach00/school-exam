@@ -65,7 +65,7 @@ export class AddExamDialogComponent implements OnInit {
       studentNumber: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
       grade: ['', [Validators.required, Validators.pattern(/^\d{1}$/)]],
       examDate: ['', Validators.required],
-      courseCode: ['', [Validators.required, Validators.pattern(/^[A-Z]/)]],
+      courseCode: ['', [Validators.required, Validators.pattern(/^[A-Z]{3}$/)]],
     });
   }
 }

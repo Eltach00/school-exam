@@ -45,6 +45,19 @@ export class StudentPageContainerComponent implements OnInit {
       .pipe(filter((result) => !!result))
       .subscribe((Student: StudentDTO) => {
         this.newStudent = Student;
+        // post the new student
+        // this.loaderService.show();
+        // this.examsAPIService
+        //   .addStudent(Student)
+        //   .pipe(
+        //     untilDestroyed(this),
+        //     finalize(() => {
+        //       this.loaderService.hide();
+        //     }),
+        //   )
+        //   .subscribe(() => {
+        //     this.getStudents()
+        //   });
       });
   }
 }

@@ -6,45 +6,61 @@
 ></app-dialog-header>
 
 <form [formGroup]="addStudentForm" class="row mt-20">
-  <mat-form-field class="col-4 mb-10">
+  <mat-form-field class="col-4 mb-30">
     <mat-label>Şagirdin Adı</mat-label>
     <input matInput formControlName="name" required />
     <mat-error *ngIf="addStudentForm.get('name').hasError('required')"
       >Şagirdin adı tələb olunur</mat-error
     >
+    <mat-error
+      *ngIf="
+        addStudentForm.get('name').hasError('pattern') ||
+        addStudentForm.get('name').hasError('maxLength')
+      "
+      >Şagirdin adı yalnız hərflərdən və boşluqlardan ibarət olmalıdır (30
+      simvoldan çox ola bilməz).</mat-error
+    >
   </mat-form-field>
-  <mat-form-field class="col-4 mb-10">
+  <mat-form-field class="col-4 mb-30">
     <mat-label>Şagirdin Soyadı</mat-label>
     <input matInput formControlName="lastName" required />
     <mat-error *ngIf="addStudentForm.get('lastName').hasError('required')"
       >Şagirdin soyadı tələb olunur</mat-error
     >
+    <mat-error
+      *ngIf="
+        addStudentForm.get('lastName').hasError('pattern') ||
+        addStudentForm.get('lastName').hasError('maxLength')
+      "
+      >Şagirdin soyadı yalnız hərflərdən və boşluqlardan ibarət olmalıdır (30
+      simvoldan çox ola bilməz).</mat-error
+    >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-10">
+  <mat-form-field class="col-4 mb-30">
     <mat-label>Sinif</mat-label>
     <input matInput formControlName="class" required />
     <mat-error *ngIf="addStudentForm.get('class').hasError('required')"
       >Sinif tələb olunur</mat-error
     >
     <mat-error *ngIf="addStudentForm.get('class').hasError('pattern')"
-      >Sinif yalnız max 2 rəqəmlərdən ibarət olmalıdır</mat-error
+      >Sinif yalnız 1 və 2 rəqəmdən ibarət olmalıdır.</mat-error
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-10">
+  <mat-form-field class="col-4 mb-30">
     <mat-label>Nömrə</mat-label>
     <input matInput formControlName="number" required />
     <mat-error *ngIf="addStudentForm.get('number').hasError('required')"
       >Nömrə tələb olunur</mat-error
     >
     <mat-error *ngIf="addStudentForm.get('number').hasError('pattern')"
-      >Nömrə yalnız rəqəmlərdən ibarət olmalıdır. Min 1, max 5 rəqəm</mat-error
+      >ŞagŞagirdin nömrəsi yalnız 5 rəqəmdən ibarət olmalıdır</mat-error
     >
   </mat-form-field>
 </form>
 
-<div class="mt-20">
+<div>
   <button
     mat-raised-button
     class="mr-8"

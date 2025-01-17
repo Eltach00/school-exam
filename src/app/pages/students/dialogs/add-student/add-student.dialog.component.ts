@@ -49,10 +49,24 @@ export class AddStudentDialogComponent implements OnInit {
 
   private initForm(): void {
     this.addStudentForm = this.fb.group({
-      name: ['', Validators.required],
-      class: ['', [Validators.required, Validators.pattern('^\\d{1,2}$')]],
-      lastName: ['', Validators.required],
-      number: ['', [Validators.required, Validators.pattern('^\\d{1,5}$')]],
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[A-Za-zçğıöşüÇĞİÖŞÜ\s]+$/),
+          Validators.maxLength(30),
+        ],
+      ],
+      class: ['', [Validators.required, Validators.pattern(/^\d{1,2}$/)]],
+      lastName: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[A-Za-zçğıöşüÇĞİÖŞÜ\s]+$/),
+          Validators.maxLength(30),
+        ],
+      ],
+      number: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
     });
   }
 }

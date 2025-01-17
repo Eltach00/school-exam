@@ -45,6 +45,19 @@ export class LessonPageContainerComponent implements OnInit {
       .pipe(filter((result) => !!result))
       .subscribe((lesson: LessonDTO) => {
         this.newLesson = lesson;
+        // post the new lesson
+        // this.loaderService.show();
+        // this.lessonsService
+        //   .addLesson(Lesson)
+        //   .pipe(
+        //     untilDestroyed(this),
+        //     finalize(() => {
+        //       this.loaderService.hide();
+        //     }),
+        //   )
+        //   .subscribe(() => {
+        //     this.getLessons()
+        //   });
       });
   }
 }

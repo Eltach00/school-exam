@@ -6,52 +6,76 @@
 ></app-dialog-header>
 
 <form [formGroup]="addLessonForm" class="row mt-20">
-  <mat-form-field class="col-4 mb-10">
+  <mat-form-field class="col-4 mb-30">
     <mat-label>Dərsin Kodu</mat-label>
     <input matInput formControlName="code" required />
     <mat-error *ngIf="addLessonForm.get('code').hasError('required')"
-      >Dərsin kodu tələb olunur</mat-error
+      >Dərsin kodu yalnız 3 böyük latın hərfindən ibarət olmalıdır.</mat-error
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-10">
+  <mat-form-field class="col-4 mb-30">
     <mat-label>Dərsin Adı</mat-label>
     <input matInput formControlName="name" required />
     <mat-error *ngIf="addLessonForm.get('name').hasError('required')"
       >Dərsin adı tələb olunur</mat-error
     >
+    <mat-error
+      *ngIf="
+        addLessonForm.get('name').hasError('pattern') ||
+        addLessonForm.get('name').hasError('maxLength')
+      "
+      >Dərsin adı yalnız hərflərdən və boşluqlardan ibarət olmalıdır (30
+      simvoldan çox ola bilməz).</mat-error
+    >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-10">
+  <mat-form-field class="col-4 mb-30">
     <mat-label>Sinif</mat-label>
     <input matInput formControlName="class" required />
     <mat-error *ngIf="addLessonForm.get('class').hasError('required')"
       >Sinif tələb olunur</mat-error
     >
     <mat-error *ngIf="addLessonForm.get('class').hasError('pattern')"
-      >Sinif yalnız rəqəmlərdən ibarət olmalıdır</mat-error
+      >Sinif yalnız 1 və 2 rəqəmdən ibarət olmalıdır.</mat-error
     >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-10">
+  <mat-form-field class="col-4 mb-30">
     <mat-label>Müəllimin Adı</mat-label>
     <input matInput formControlName="teacherFirstName" required />
     <mat-error
       *ngIf="addLessonForm.get('teacherFirstName').hasError('required')"
       >Müəllimin adı tələb olunur</mat-error
     >
+    <mat-error
+      *ngIf="
+        addLessonForm.get('teacherFirstName').hasError('pattern') ||
+        addLessonForm.get('teacherFirstName').hasError('maxLength')
+      "
+      >Müəllimin adı yalnız hərflərdən və boşluqlardan ibarət olmalıdır (20
+      simvoldan çox ola bilməz).</mat-error
+    >
   </mat-form-field>
 
-  <mat-form-field class="col-4 mb-10">
+  <mat-form-field class="col-4 mb-30">
     <mat-label>Müəllimin Soyadı</mat-label>
     <input matInput formControlName="teacherLastName" required />
     <mat-error *ngIf="addLessonForm.get('teacherLastName').hasError('required')"
       >Müəllimin soyadı tələb olunur</mat-error
     >
+    <mat-error
+      *ngIf="
+        addLessonForm.get('teacherLastName').hasError('pattern') ||
+        addLessonForm.get('teacherLastName').hasError('maxLength')
+      "
+      >Müəllimin soyadı yalnız hərflərdən və boşluqlardan ibarət olmalıdır (20
+      simvoldan çox ola bilməz).</mat-error
+    >
   </mat-form-field>
 </form>
 
-<div class="mt-20">
+<div class="mt-10">
   <button
     mat-raised-button
     color="primary"

@@ -45,6 +45,19 @@ export class ExamPageContainerComponent implements OnInit {
       .pipe(filter((result) => !!result))
       .subscribe((Exam: ExamDTO) => {
         this.newExam = Exam;
+        // post the new exam
+        // this.loaderService.show();
+        // this.examsAPIService
+        //   .addExam(Exam)
+        //   .pipe(
+        //     untilDestroyed(this),
+        //     finalize(() => {
+        //       this.loaderService.hide();
+        //     }),
+        //   )
+        //   .subscribe(() => {
+        //     this.getExams()
+        //   });
       });
   }
 }

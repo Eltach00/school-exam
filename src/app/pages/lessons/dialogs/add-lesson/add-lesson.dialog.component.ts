@@ -48,11 +48,32 @@ export class AddLessonDialogComponent implements OnInit {
 
   private initForm(): void {
     this.addLessonForm = this.fb.group({
-      code: ['', Validators.required],
-      name: ['', Validators.required],
-      class: ['', [Validators.required, Validators.pattern('^\\d{1,2}$')]],
-      teacherFirstName: ['', Validators.required],
-      teacherLastName: ['', Validators.required],
+      code: ['', [Validators.required, Validators.pattern(/^[A-Z]{3}$/)]],
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[A-Za-zçğıöşüÇĞİÖŞÜ\s]+$/),
+          Validators.maxLength(30),
+        ],
+      ],
+      class: ['', [Validators.required, Validators.pattern(/^\d{1,2}$/)]],
+      teacherFirstName: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[A-Za-zçğıöşüÇĞİÖŞÜ\s]+$/),
+          Validators.maxLength(30),
+        ],
+      ],
+      teacherLastName: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[A-Za-zçğıöşüÇĞİÖŞÜ\s]+$/),
+          Validators.maxLength(30),
+        ],
+      ],
     });
   }
 }
